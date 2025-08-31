@@ -12,14 +12,7 @@ void GPIO_Config(void)
     // Now set to 01 (output mode)
     GPIOA->MODER |=  ((1UL << (1 * 2)) | (1UL << (2 * 2)) | (1UL << (3 * 2)));
 
-    // Optional: Configure Output Type (Push-Pull)
-    GPIOA->OTYPER &= ~((1UL << 1) | (1UL << 2) | (1UL << 3));
 
-    // Optional: Configure Speed (Low, Medium, High, Very High)
-    GPIOA->OSPEEDR |= ((1UL << (1 * 2)) | (1UL << (2 * 2)) | (1UL << (3 * 2)));
-
-    // Optional: Configure Pull-up/Pull-down (None here)
-    GPIOA->PUPDR &= ~((3UL << (1 * 2)) | (3UL << (2 * 2)) | (3UL << (3 * 2)));
 }
 
 int main(void)
